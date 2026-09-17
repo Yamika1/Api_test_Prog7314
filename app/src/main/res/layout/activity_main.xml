@@ -11,7 +11,7 @@
 
 
     <TextView
-        android:id="@+id/tvStudyMate"
+        android:id="@+id/textviewStudyMate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -24,19 +24,19 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvWelcome"
+        android:id="@+id/textviewWelcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="4dp"
         android:text="Welcome back!"
-        android:textColor="#6F6878"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvStudyMate" />
+        app:layout_constraintTop_toBottomOf="@id/textviewStudyMate" />
 
     <TextView
-        android:id="@+id/tvDate"
+        android:id="@+id/textviewDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -45,11 +45,11 @@
         android:textColor="#6F6878"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvWelcome" />
+        app:layout_constraintTop_toBottomOf="@id/textviewWelcome" />
 
 
     <TextView
-        android:id="@+id/tvTodayTitle"
+        android:id="@+id/textviewTodayTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -59,7 +59,7 @@
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvDate" />
+        app:layout_constraintTop_toBottomOf="@id/textviewDate" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardTodayTask"
@@ -73,7 +73,7 @@
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvTodayTitle">
+        app:layout_constraintTop_toBottomOf="@id/textviewTodayTitle">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -83,7 +83,7 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/tvTaskName"
+                android:id="@+id/textviewTaskName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No tasks for today"
@@ -92,7 +92,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvTaskDetails"
+                android:id="@+id/textviewTaskDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
@@ -106,7 +106,7 @@
 
 
     <TextView
-        android:id="@+id/tvUpcomingTitle"
+        android:id="@+id/textviewUpcomingTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -130,7 +130,7 @@
         app:cardElevation="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvUpcomingTitle">
+        app:layout_constraintTop_toBottomOf="@id/textviewUpcomingTitle">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -140,7 +140,7 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/tvUpcomingTask"
+                android:id="@+id/textviewUpcomingTask"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="No upcoming tasks"
@@ -149,7 +149,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvUpcomingDetails"
+                android:id="@+id/textviewUpcomingDetails"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -163,7 +163,7 @@
 
 
     <TextView
-        android:id="@+id/tvProgressTitle"
+        android:id="@+id/textviewProgressTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -189,7 +189,7 @@
         app:layout_constraintBottom_toTopOf="@id/bottomNav"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvProgressTitle">
+        app:layout_constraintTop_toBottomOf="@id/textviewProgressTitle">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -199,7 +199,7 @@
             android:padding="16dp">
 
             <TextView
-                android:id="@+id/tvCompleted"
+                android:id="@+id/textviewCompleted"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -209,7 +209,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvPending"
+                android:id="@+id/textviewPending"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -220,7 +220,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tvPercentage"
+                android:id="@+id/textviewPercentage"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

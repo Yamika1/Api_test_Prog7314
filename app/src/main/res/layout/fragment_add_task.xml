@@ -9,7 +9,7 @@
     android:background="@drawable/background_6"
     tools:context=".AddTaskFragment">
 
-    <!-- Scroll view for the Add Task as its too long -->
+    <!-- Scroll view for the Add Task form -->
     <ScrollView
         android:id="@+id/addTaskScrollView"
         android:layout_width="0dp"
@@ -26,8 +26,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <!-- Add Task Title -->
             <TextView
-                android:id="@+id/tvAddTaskTitle"
+                android:id="@+id/addTaskTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -39,8 +40,9 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <!-- Add Task Subtitle -->
             <TextView
-                android:id="@+id/tvAddTaskSubtitle"
+                android:id="@+id/addTaskSubtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -49,10 +51,11 @@
                 android:textColor="#6F6878"
                 android:textSize="15sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvAddTaskTitle" />
+                app:layout_constraintTop_toBottomOf="@id/addTaskTitle" />
 
+            <!-- Task Name -->
             <TextView
-                android:id="@+id/tvTaskNameLabel"
+                android:id="@+id/taskNameLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -62,10 +65,10 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvAddTaskSubtitle" />
+                app:layout_constraintTop_toBottomOf="@id/addTaskSubtitle" />
 
             <EditText
-                android:id="@+id/etTaskName"
+                android:id="@+id/taskName"
                 android:layout_width="0dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="24dp"
@@ -81,10 +84,11 @@
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvTaskNameLabel" />
+                app:layout_constraintTop_toBottomOf="@id/taskNameLabel" />
 
+            <!-- Description -->
             <TextView
-                android:id="@+id/tvDescriptionLabel"
+                android:id="@+id/descriptionLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -94,10 +98,10 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etTaskName" />
+                app:layout_constraintTop_toBottomOf="@id/taskName" />
 
             <EditText
-                android:id="@+id/etTaskDescription"
+                android:id="@+id/taskDescription"
                 android:layout_width="0dp"
                 android:layout_height="75dp"
                 android:layout_marginStart="24dp"
@@ -113,10 +117,11 @@
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDescriptionLabel" />
+                app:layout_constraintTop_toBottomOf="@id/descriptionLabel" />
 
+            <!-- Category -->
             <TextView
-                android:id="@+id/tvCategoryLabel"
+                android:id="@+id/categoryLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -126,7 +131,7 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etTaskDescription" />
+                app:layout_constraintTop_toBottomOf="@id/taskDescription" />
 
             <Spinner
                 android:id="@+id/spCategory"
@@ -138,10 +143,11 @@
                 android:background="@drawable/edit_text_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvCategoryLabel" />
+                app:layout_constraintTop_toBottomOf="@id/categoryLabel" />
 
+            <!-- Priority -->
             <TextView
-                android:id="@+id/tvPriorityLabel"
+                android:id="@+id/priorityLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -154,7 +160,7 @@
                 app:layout_constraintTop_toBottomOf="@id/spCategory" />
 
             <Spinner
-                android:id="@+id/spPriority"
+                android:id="@+id/spinnerPriority"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="24dp"
@@ -163,11 +169,11 @@
                 android:background="@drawable/edit_text_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvPriorityLabel" />
+                app:layout_constraintTop_toBottomOf="@id/priorityLabel" />
 
-
+            <!-- Due Date -->
             <TextView
-                android:id="@+id/tvDueDateLabel"
+                android:id="@+id/dueDateLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="24dp"
@@ -177,15 +183,16 @@
                 android:textSize="15sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spPriority" />
+                app:layout_constraintTop_toBottomOf="@id/spinnerPriority" />
 
             <EditText
-                android:id="@+id/etDueDate"
+                android:id="@+id/dueDate"
                 android:layout_width="0dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="24dp"
+                android:autofillHints=""
                 android:background="@drawable/edit_text_background"
                 android:clickable="true"
                 android:focusable="false"
@@ -197,12 +204,13 @@
                 android:textSize="15sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvDueDateLabel" />
+                app:layout_constraintTop_toBottomOf="@id/dueDateLabel" />
 
+            <!-- Save Task Button -->
             <Button
                 android:id="@+id/btnSaveTask"
-                android:layout_width="0dp"
-                android:layout_height="52dp"
+                android:layout_width="240dp"
+                android:layout_height="56dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="18dp"
                 android:layout_marginEnd="24dp"
@@ -211,15 +219,16 @@
                 android:textColor="#FFFFFF"
                 android:textSize="16sp"
                 android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/etDueDate"
-                app:layout_constraintBottom_toBottomOf="parent" />
+                app:layout_constraintTop_toBottomOf="@id/dueDate" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
+    <!-- Shared Bottom Navigation -->
     <include
         android:id="@+id/bottomNav"
         layout="@layout/bottom_nav"

@@ -10,7 +10,7 @@
     tools:context=".RegisterActivity">
 
     <TextView
-        android:id="@+id/tvCreateAccount"
+        android:id="@+id/createAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Create New Account"
@@ -25,7 +25,7 @@
 
 
     <EditText
-        android:id="@+id/etFirstName"
+        android:id="@+id/firstName"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:hint="First Name"
@@ -36,7 +36,7 @@
         android:padding="12dp"
         android:background="@drawable/rounded_white"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@id/tvCreateAccount"
+        app:layout_constraintTop_toBottomOf="@id/createAccount"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="30dp"
@@ -45,7 +45,7 @@
 
 
     <EditText
-        android:id="@+id/etLastName"
+        android:id="@+id/lastName"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:hint="Last Name"
@@ -56,7 +56,7 @@
         android:padding="12dp"
         android:background="@drawable/rounded_white"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@id/etFirstName"
+        app:layout_constraintTop_toBottomOf="@id/firstName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="30dp"
@@ -65,7 +65,7 @@
 
 
     <EditText
-        android:id="@+id/etUsername"
+        android:id="@+id/username"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:hint="Username"
@@ -76,7 +76,7 @@
         android:padding="12dp"
         android:background="@drawable/rounded_white"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/etLastName"
+        app:layout_constraintTop_toBottomOf="@id/lastName"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="30dp"
@@ -85,7 +85,7 @@
 
 
     <EditText
-        android:id="@+id/etEmail"
+        android:id="@+id/email"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:hint="Email Address"
@@ -96,7 +96,7 @@
         android:padding="12dp"
         android:background="@drawable/rounded_white"
         android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@id/etUsername"
+        app:layout_constraintTop_toBottomOf="@id/username"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="30dp"
@@ -105,7 +105,7 @@
 
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/password"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:hint="Password"
@@ -116,7 +116,7 @@
         android:padding="12dp"
         android:background="@drawable/rounded_white"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/etEmail"
+        app:layout_constraintTop_toBottomOf="@id/email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="30dp"
@@ -133,7 +133,7 @@
         android:textColor="@android:color/white"
         android:textAllCaps="false"
         android:background="@drawable/rounded_black"
-        app:layout_constraintTop_toBottomOf="@id/etPassword"
+        app:layout_constraintTop_toBottomOf="@id/password"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="30dp"
