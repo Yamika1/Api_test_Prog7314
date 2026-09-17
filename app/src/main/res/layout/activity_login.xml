@@ -23,10 +23,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="45dp" />
 
-    <!-- Login Heading -->
-
     <TextView
-        android:id="@+id/tvLogin"
+        android:id="@+id/textviewLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Login"
@@ -38,10 +36,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="10dp" />
 
-    <!-- Username / Email -->
 
     <EditText
-        android:id="@+id/etLoginUsername"
+        android:id="@+id/loginUsername"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:hint="Username or Email"
@@ -52,17 +49,15 @@
         android:padding="12dp"
         android:background="@drawable/rounded_white"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/tvLogin"
+        app:layout_constraintTop_toBottomOf="@id/textviewLogin"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="30dp" />
 
-    <!-- Password -->
-
     <EditText
-        android:id="@+id/etLoginPassword"
+        android:id="@+id/loginPassword"
         android:layout_width="0dp"
         android:layout_height="58dp"
         android:hint="Password"
@@ -73,14 +68,13 @@
         android:padding="12dp"
         android:background="@drawable/rounded_white"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/etLoginUsername"
+        app:layout_constraintTop_toBottomOf="@id/loginUsername"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="18dp" />
 
-    <!-- Login Button -->
 
     <Button
         android:id="@+id/btnLogin"
@@ -92,14 +86,13 @@
         android:textColor="@android:color/white"
         android:textAllCaps="false"
         android:background="@drawable/rounded_black"
-        app:layout_constraintTop_toBottomOf="@id/etLoginPassword"
+        app:layout_constraintTop_toBottomOf="@id/loginPassword"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginTop="25dp" />
 
-    <!-- SSO Button -->
 
     <Button
         android:id="@+id/btnSSO"
@@ -118,10 +111,9 @@
         android:layout_marginEnd="30dp"
         android:layout_marginTop="15dp" />
 
-    <!-- Register -->
 
     <TextView
-        android:id="@+id/tvRegister"
+        android:id="@+id/textviewRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
