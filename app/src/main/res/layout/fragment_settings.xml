@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="22dp"
-                android:text="Settings"
+                android:text="@string/settings"
                 android:textColor="#000000"
                 android:textSize="26sp"
                 android:textStyle="bold" />
@@ -49,7 +49,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Appearance"
+                android:text="@string/appearance"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -80,7 +80,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Dark Mode"
+                            android:text="@string/dark_mode"
                             android:textColor="#000000"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -89,7 +89,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Dark Mode will be developed soon."
+                            android:text="@string/dark_mode_will_be_developed_soon"
                             android:textColor="#000000"
                             android:textSize="13sp" />
 
@@ -98,7 +98,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Coming soon"
+                        android:text="@string/coming_soon"
                         android:textColor="#000000"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -114,7 +114,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Notifications"
+                android:text="@string/notifications"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -145,7 +145,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Task Notifications"
+                            android:text="@string/task_notifications"
                             android:textColor="#000000"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -154,7 +154,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Task reminders and notifications will be developed soon."
+                            android:text="@string/task_reminders_and_notifications_will_be_developed_soon"
                             android:textColor="#000000"
                             android:textSize="13sp" />
 
@@ -163,7 +163,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Coming soon"
+                        android:text="@string/coming_soon"
                         android:textColor="#000000"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -179,7 +179,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Account"
+                android:text="@string/account"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -210,7 +210,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Multi-Language Support"
+                            android:text="@string/multi_language_support"
                             android:textColor="#000000"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -219,7 +219,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Multi-language support will be developed soon."
+                            android:text="@string/multi_language_support_will_be_developed_soon"
                             android:textColor="#000000"
                             android:textSize="13sp" />
 
@@ -228,7 +228,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Coming soon"
+                        android:text="@string/coming_soon"
                         android:textColor="#000000"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -244,7 +244,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                android:text="Security"
+                android:text="@string/security"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -275,7 +275,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Biometric Login"
+                            android:text="@string/biometric_login"
                             android:textColor="#000000"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -284,7 +284,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="4dp"
-                            android:text="Fingerprint and facial recognition will be developed soon."
+                            android:text="@string/fingerprint_and_facial_recognition_will_be_developed_soon"
                             android:textColor="#000000"
                             android:textSize="13sp" />
 
@@ -293,7 +293,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Coming soon"
+                        android:text="@string/coming_soon"
                         android:textColor="#000000"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -310,7 +310,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="73dp"
                 android:layout_marginBottom="20dp"
-                android:text="Logout"
+                android:text="@string/logout"
                 android:textColor="#000000"
                 android:textSize="16sp"
                 android:textStyle="bold" />

@@ -29,7 +29,7 @@
                 android:id="@+id/textviewProgressTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Progress Dashboard"
+                android:text="@string/progress_dashboard"
                 android:textColor="@android:color/black"
                 android:textSize="26sp"
                 android:textStyle="bold"
@@ -53,7 +53,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Overall Completion"
+                        android:text="@string/overall_completion"
                         android:textColor="@android:color/black"
                         android:textSize="19sp"
                         android:textStyle="bold"
@@ -126,7 +126,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="Total Tasks"
+                        android:text="@string/total_tasks"
                         android:textColor="@android:color/black"
                         android:textSize="12sp" />
 
@@ -151,7 +151,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Completed"
+                        android:text="@string/completed"
                         android:textColor="@android:color/black"
                         android:textSize="12sp"
                         android:gravity="center" />
@@ -177,7 +177,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Incomplete"
+                        android:text="@string/incomplete"
                         android:textColor="@android:color/black"
                         android:textSize="12sp"
                         android:gravity="center" />
@@ -203,7 +203,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Overdue"
+                        android:text="@string/overdue"
                         android:textColor="@android:color/black"
                         android:textSize="12sp"
                         android:gravity="center" />
@@ -216,7 +216,7 @@
                 android:id="@+id/textviewRecentTasksTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recent Tasks"
+                android:text="@string/recent_tasks"
                 android:textColor="@android:color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
