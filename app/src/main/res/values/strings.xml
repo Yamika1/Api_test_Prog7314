@@ -14,4 +14,10 @@
     <string name="completed">Completed</string>
     <string name="pending">Pending</string>
     <string name="progress">Progress</string>
+    <string name="welcome_back_to_studymate">Welcome back to StudyMate</string>
+    <string name="sign_in_to_continue_to_your_studymate_account">Sign in to continue to your StudyMate account</string>
+    <string name="single_sign_on">Single Sign-On</string>
+    <string name="continue_with_sso">Continue with SSO</string>
+    <string name="use_your_existing_account_to_sign_in_securely">Use your existing account to sign in securely.</string>
+    <string name="back_to_login">Back to Login</string>
 </resources>
