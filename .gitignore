@@ -1,3 +1,21 @@
+<<<<<<< HEAD
 node_modules
 .env
 serviceAccountKey.json
+=======
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+>>>>>>> 4fc1abb48ba3b8009eedab162c7b467c477f5311

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bottomNav"
+    android:layout_width="match_parent"
+    android:layout_height="76dp"
+    android:orientation="horizontal"
+    android:gravity="center"
+    android:background="@color/studymate_background"
+    android:elevation="10dp"
+    android:paddingTop="6dp"
+    android:paddingBottom="6dp">
+
+    <TextView
+        android:id="@+id/navHome"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/_10_home"
+        android:gravity="center"
+        android:textColor="@color/studymate_primary"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/navTasks"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/_10_tasks"
+        android:gravity="center"
+        android:textColor="@color/studymate_text_grey"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/navAddTask"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/_10_add_task"
+        android:gravity="center"
+        android:textColor="@color/studymate_text_grey"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/navProgress"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/_10_progress"
+        android:gravity="center"
+        android:textColor="@color/studymate_text_grey"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/navSettings"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="@string/_10_settings"
+        android:gravity="center"
+        android:textColor="@color/studymate_text_grey"
+        android:textSize="12sp" />
+
+</LinearLayout>
