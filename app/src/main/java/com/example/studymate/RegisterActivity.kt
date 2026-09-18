@@ -1,5 +1,6 @@
 package com.example.studymate
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -19,6 +20,8 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var password : EditText
     private lateinit var btnRegister : Button
 
+    private lateinit var textviewLogin : TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,6 +33,7 @@ class RegisterActivity : AppCompatActivity() {
         email=findViewById<EditText>(R.id.email)
         password=findViewById<EditText>(R.id.password)
         btnRegister=findViewById<Button>(R.id.btnRegister)
+        textviewLogin = findViewById<TextView>(R.id.textviewLogin)
 
 
         btnRegister.setOnClickListener {
@@ -46,6 +50,14 @@ class RegisterActivity : AppCompatActivity() {
                 register(firstName,lastName,email,username,password)
             }
         }
+
+        textviewLogin.setOnClickListener {
+        val intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
+        }
+
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -54,7 +66,7 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun register(firstName:String,lastName:String,email:String,username: String,password: String){
-        /*  -- api call here --
+        /*    -- api call here --
          if (RegisterthingythingyCall is successful) {
            Toast.makeText(this,"Registration Successful!",Toast.LENGTH_SHORT).show()
              startActivity(intent)
