@@ -1,0 +1,70 @@
+const admin = require('../config/firebase');
+
+const register = async (req, res, next) => {
+    try{
+        const {fullName, email, password} = req.body;
+
+        if(!fullName || !email || !password){
+            return res.status(400).json({
+                error: 'Full name, email, and password are reqired'
+            });
+        }
+    
+    
+        if(
+            typeof fullName !== 'string' ||
+             typeof email !== 'string' ||
+              typeof password !== 'string' 
+        )
+        {
+ return res.status(400).json({
+                error: 'Full name, email, and password must be text values'
+            });
+        }
+        if(password.length < 8){
+            return res.status(400).json({
+                error: 'Password must be at least 8 characters long'
+            })
+        }
+
+        const user = await admin.auth().createUser({
+            email: email.toLowerCase.trim(),
+            password: password,
+            displayName: fullName.trim()
+        });
+
+        await admin.auth().setCustomUserClaims(user.uid, {
+            role: 'user'
+        });
+
+res.status(201).json({
+    message: 'User registered',
+    data: {
+        id: user.uid,
+        fullName : user.displayName,
+        email: user.email,
+        role: 'user'
+    }
+});
+
+}
+catch (error){
+    if (error.code === 'auth/email already exists'){
+        return res.status(409).json({
+            error:'User already exists'
+        });
+    }
+
+    if(error.code === 'auth/invalid-email'){
+        return res.status(400).json({
+            error: 'Email is invalid'
+        });
+
+    }
+    next(error);
+};
+module.exports = {
+    register
+}
+
+}
