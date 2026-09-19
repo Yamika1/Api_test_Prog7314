@@ -38,7 +38,7 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this,"Please fill in all fields",Toast.LENGTH_SHORT).show()
             }
             else{
-                Login(usernameOrEmail,password)
+                login(usernameOrEmail,password)
             }
         }
 
@@ -54,7 +54,7 @@ class LoginActivity : AppCompatActivity() {
             insets
         }
     }
-    fun Login(usernameOrEmail:String, password:String){
+    fun login(usernameOrEmail:String, password:String){
      /*  -- api call here --
       if (thingythingyCall is successful) {
         Toast.makeText(this,"Successfully Log in!",Toast.LENGTH_SHORT).show()
