@@ -73,6 +73,14 @@ if(!email || !password){
     });
 }
 
+if(
+    typeof email !== 'string' ||
+    typeof password !== 'string'
+){
+    return res.status(400).json({
+        error: 'Email and password must be text values'
+    });
+}
 module.exports = {
     register,
     login
