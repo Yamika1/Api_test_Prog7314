@@ -1,8 +1,7 @@
-<<<<<<< HEAD
 node_modules
 .env
 serviceAccountKey.json
-=======
+certs/
 *.iml
 .gradle
 /local.properties
@@ -18,4 +17,3 @@ serviceAccountKey.json
 .externalNativeBuild
 .cxx
 local.properties
->>>>>>> 4fc1abb48ba3b8009eedab162c7b467c477f5311
