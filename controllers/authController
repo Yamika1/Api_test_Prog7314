@@ -104,9 +104,19 @@ if(!response.ok){
         data.error.message === 'EMAIL_NOT_FOUND' ||
         data.error.message === 'INVALID_PASSWORD' ||
         data.error.message === 'INVAILD_LOGIN_CREDENTIALS'
-        
 
-    )
+    ){
+        return res.status(401).json({
+            error: 'Invalid email or password'
+        });
+    }
+if (data.error.message === 'USER_DISABLED'){
+    return res.status(403).json({
+        error: 'User account is disabled'
+    });
+}
+
+    
 module.exports = {
     register,
     login
