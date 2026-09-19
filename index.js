@@ -8,7 +8,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const connectDB=require('./config/firebase');
+const firebase =require('./config/firebase');
 
 const authRoutes = require('./routes/authRoutes');
 const errorHandler = require('./middleware/errorHandler'); 
