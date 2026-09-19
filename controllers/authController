@@ -96,6 +96,17 @@ const response = await fetch(
 }
 
 )
+
+const data = await response.json();
+
+if(!response.ok){
+    if(
+        data.error.message === 'EMAIL_NOT_FOUND' ||
+        data.error.message === 'INVALID_PASSWORD' ||
+        data.error.message === 'INVAILD_LOGIN_CREDENTIALS'
+        
+
+    )
 module.exports = {
     register,
     login
