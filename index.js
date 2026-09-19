@@ -91,12 +91,9 @@ app.use((req, res) => {
 
 if (USE_HTTPS) {
 
-const keyPath = path.join(__dirname, 'certs', 'key.pem');
-const certPath = path.join(__dirname, 'certs', 'cert.pem');
-
-    const httpsOptions = {
-        key: fs.readFileSync(keyPath),
-        cert: fs.readFileSync(certPath)
+ const httpsOptions = {
+        key: fs.readFileSync(path.resolve(__dirname, process.env.SSL_KEY_PATH)),
+        cert: fs.readFileSync(path.resolve(__dirname, process.env.SSL_CERT_PATH))
     };
 
     https.createServer(httpsOptions, app).listen(PORT, () => {
