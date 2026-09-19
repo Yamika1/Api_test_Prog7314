@@ -3,22 +3,17 @@ require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
-
-
 const helmet = require('helmet');
 const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
 const connectDB=require('./config/firebase');
-const app = express();
 
 const authRoutes = require('./routes/authRoutes');
 const errorHandler = require('./middleware/errorHandler'); 
-connectDB();
 
-
-
+const app = express();
 
 const PORT = process.env.PORT || 5000;
 const USE_HTTPS = process.env.USE_HTTPS === 'true';
@@ -69,7 +64,8 @@ app.get('/', (req, res) => {
 app.get('/health', (req, res) => {
     res.status(200).json({
         status: 'OK',
-        protocol: USE_HTTPS ? 'HTTPS' : 'HTTP'
+        protocol: USE_HTTPS ? 'HTTPS' : 'HTTP',
+        firebase : 'connected'
     });
 });
 
