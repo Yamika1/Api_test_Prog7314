@@ -1,14 +1,14 @@
 const errorHandler = (err, req, res, next) => { 
 
-  console.error(err.message); 
+  console.error(err.stack || err.message); 
 
-  res.status(500).json({ 
+  if (res.headersSent) {
+    return next(err);
+  }
+  const status = err.status || 500;
+  error: status < 500 ? err.message : 'Internal Server Error'
 
-    error: 'Something went wrong' 
-
-  }); 
-
-}; 
+}
 
 module.exports = errorHandler; 
 
