@@ -62,9 +62,11 @@ catch (error){
 
     }
     next(error);
+    }
 };
 
 const login = async (req, res, next) => {
+try {
 const {email, password} = req.body;
 
 if(!email || !password){
@@ -120,11 +122,29 @@ return res.status(400).json({
 });
 }
 
-    
+const user = await admin.auth().getUser(data.localId);
+
+res.status(200).json({
+    message: 'Login successful',
+    data: {
+        id: user.uid,
+        fullName: user.displayName,
+        email: user.email,
+        role: user.customClaims?.role || 'user',
+        token: data.idToken,
+        refreshToken: data.refreshToken,
+        expiresIn: data.expiresIn
+    }
+});
+
+} catch (error){
+
+    next(error);
+}
+   
+};
 module.exports = {
     register,
     login
 }
 
-}
-}
