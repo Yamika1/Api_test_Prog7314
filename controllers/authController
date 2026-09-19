@@ -115,6 +115,10 @@ if (data.error.message === 'USER_DISABLED'){
         error: 'User account is disabled'
     });
 }
+return res.status(400).json({
+    error: 'Login failed'
+});
+}
 
     
 module.exports = {
