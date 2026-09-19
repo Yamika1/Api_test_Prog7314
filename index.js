@@ -91,6 +91,8 @@ app.use((req, res) => {
 
 if (USE_HTTPS) {
 
+const keyPath = path.join(__dirname, 'certs', 'key.pem');
+const certPath = path.join(__dirname, 'certs', 'cert.pem');
 
     const httpsOptions = {
         key: fs.readFileSync(keyPath),
