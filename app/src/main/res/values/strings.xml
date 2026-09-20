@@ -92,5 +92,6 @@
     <string name="colon">⋮</string>
     <string name="plus">+</string>
     <string name="use_another_account">Use another account</string>
->>>>>>> Stashed changes
+    <string name="sign_in_to_continue_to_your_account">Sign in to continue to your account</string>
+    >>>>>>> Stashed changes
 </resources>
