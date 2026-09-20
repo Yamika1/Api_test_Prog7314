@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
-        android:text="Welcome back to StudyMate"
+        android:text="@string/welcome_back_to_studymate"
         android:textColor="#3F3151"
         android:textSize="26sp"
         android:textStyle="bold"
@@ -30,7 +30,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:gravity="center"
-        android:text="Sign in to continue to your account"
+        android:text="@string/sign_in_to_continue_to_your_account"
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -42,7 +42,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="25dp"
-        android:text="Login with SSO"
+        android:text="@string/login_with_sso"
         android:textColor="#3F3151"
         android:textSize="20sp"
         android:textStyle="bold"
@@ -75,7 +75,7 @@
                 android:layout_height="56dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="28dp"
-                android:contentDescription="StudyMate Logo"
+                android:contentDescription="@string/studymate_logo"
                 android:scaleType="fitCenter"
                 android:src="@drawable/studymate_logo" />
 
@@ -86,7 +86,7 @@
                 android:layout_marginStart="24dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginBottom="8dp"
-                android:text="Pick an account"
+                android:text="@string/pick_an_account"
                 android:textColor="@color/black"
                 android:textSize="20sp" />
 
@@ -111,7 +111,7 @@
                     android:id="@+id/imageViewAccount"
                     android:layout_width="40dp"
                     android:layout_height="40dp"
-                    android:contentDescription="Account"
+                    android:contentDescription="@string/account"
                     android:src="@drawable/ic_account_circle" />
 
                 <LinearLayout
@@ -156,7 +156,7 @@
                     android:layout_width="40dp"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:text="⋮"
+                    android:text="@string/colon"
                     android:textColor="#5F6368"
                     android:textSize="22sp" />
 
@@ -185,7 +185,7 @@
                     android:layout_height="40dp"
                     android:background="@drawable/circle_background"
                     android:gravity="center"
-                    android:text="+"
+                    android:text="@string/plus"
                     android:textColor="#5F6368"
                     android:textSize="25sp" />
 
@@ -194,7 +194,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="14dp"
-                    android:text="Use another account"
+                    android:text="@string/use_another_account"
                     android:textColor="@color/black"
                     android:textSize="14sp" />
 
