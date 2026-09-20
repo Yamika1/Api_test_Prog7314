@@ -55,7 +55,7 @@ class RegisterActivity : AppCompatActivity() {
 
         textviewLogin.setOnClickListener {
 
-        val intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
 
