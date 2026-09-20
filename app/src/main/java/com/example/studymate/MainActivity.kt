@@ -15,29 +15,17 @@ class MainActivity : AppCompatActivity() {
     private lateinit var textviewTaskName: TextView
     private lateinit var textviewStudyMate: TextView
     private lateinit var textviewWelcome : TextView
-
     private lateinit var textviewDate : TextView
-
     private lateinit var textviewTodayTitle : TextView
-
     private lateinit var cardTodayTask : CardView
-
     private lateinit var textviewTaskDetails : TextView
-
     private lateinit var textviewUpcomingTitle : TextView
-
     private lateinit var cardUpcomingTask : CardView
-
     private lateinit var textviewUpcomingDetails : TextView
-
     private lateinit var textviewProgressTitle : TextView
-
     private lateinit var cardProgress : CardView
-
     private lateinit var textviewCompleted : TextView
-
     private lateinit var textviewPercentage : TextView
-
     private lateinit var bottomNav : View
 
     override fun onCreate(savedInstanceState: Bundle?) {
