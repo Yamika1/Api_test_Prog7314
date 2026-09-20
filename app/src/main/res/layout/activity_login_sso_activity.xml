@@ -3,7 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+<<<<<<< Updated upstream
     android:id="@+id/activity_login_sso_activity"
+=======
+    android:id="@+id/login_sso"
+>>>>>>> Stashed changes
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background_1"
@@ -13,7 +17,11 @@
         android:id="@+id/textviewSSOTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< Updated upstream
         android:layout_marginTop="120dp"
+=======
+        android:layout_marginTop="70dp"
+>>>>>>> Stashed changes
         android:text="@string/welcome_back_to_studymate"
         android:textColor="#3F3151"
         android:textSize="26sp"
@@ -30,7 +38,11 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="32dp"
         android:gravity="center"
+<<<<<<< Updated upstream
         android:text="@string/sign_in_to_continue_to_your_studymate_account"
+=======
+        android:text="@string/sign_in_to_continue_to_your_account"
+>>>>>>> Stashed changes
         android:textColor="@color/black"
         android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,7 +53,11 @@
         android:id="@+id/textviewSSOLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+<<<<<<< Updated upstream
         android:layout_marginTop="70dp"
+=======
+        android:layout_marginTop="25dp"
+>>>>>>> Stashed changes
         android:text="@string/single_sign_on"
         android:textColor="#3F3151"
         android:textSize="20sp"
@@ -80,6 +96,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/btnSSOLogin" />
 
+<<<<<<< Updated upstream
     <Button
         android:id="@+id/textviewBackToLogin"
         android:layout_width="148dp"
@@ -95,5 +112,141 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textviewSSOInfo" />
+=======
+            <ImageView
+                android:id="@+id/imageViewStudyMateLogo"
+                android:layout_width="137dp"
+                android:layout_height="56dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="28dp"
+                android:contentDescription="@string/studymate_logo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/studymate_logo" />
+
+            <TextView
+                android:id="@+id/textViewPickAccount"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="24dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/pick_an_account"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#DADCE0" />
+
+            <LinearLayout
+                android:id="@+id/layoutExistingAccount"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="24dp"
+                android:paddingEnd="12dp">
+
+                <ImageView
+                    android:id="@+id/imageViewAccount"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:contentDescription="@string/account"
+                    android:src="@drawable/ic_account_circle" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textViewAccountName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewAccountEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:text=""
+                        android:textColor="#5F6368"
+                        android:textSize="12sp" />
+
+                    <TextView
+                        android:id="@+id/textViewAccountUsername"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="#5F6368"
+                        android:textSize="11sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewAccountMenu"
+                    android:layout_width="40dp"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/colon"
+                    android:textColor="#5F6368"
+                    android:textSize="22sp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E8EAED" />
+
+            <LinearLayout
+                android:id="@+id/layoutUseAnotherAccount"
+                android:layout_width="match_parent"
+                android:layout_height="72dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="24dp"
+                android:paddingEnd="24dp">
+
+                <TextView
+                    android:id="@+id/textViewPlus"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/circle_background"
+                    android:gravity="center"
+                    android:text="@string/plus"
+                    android:textColor="#5F6368"
+                    android:textSize="25sp" />
+
+                <TextView
+                    android:id="@+id/textViewUseAnother"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:text="@string/use_another_account"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+>>>>>>> Stashed changes
 
 </androidx.constraintlayout.widget.ConstraintLayout>

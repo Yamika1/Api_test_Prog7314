@@ -16,7 +16,11 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var firstName : EditText
     private lateinit var lastName : EditText
     private lateinit var username : EditText
+<<<<<<< Updated upstream
      private lateinit var email : EditText
+=======
+    private lateinit var email : EditText
+>>>>>>> Stashed changes
     private lateinit var password : EditText
     private lateinit var btnRegister : Button
 
@@ -37,7 +41,11 @@ class RegisterActivity : AppCompatActivity() {
 
 
         btnRegister.setOnClickListener {
+<<<<<<< Updated upstream
            val firstName = firstName.text.toString().trim()
+=======
+            val firstName = firstName.text.toString().trim()
+>>>>>>> Stashed changes
             val lastName = lastName.text.toString().trim()
             val email = email.text.toString().trim()
             val username = username.text.toString().trim()
@@ -52,9 +60,15 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         textviewLogin.setOnClickListener {
+<<<<<<< Updated upstream
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
+=======
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+>>>>>>> Stashed changes
         }
 
 
