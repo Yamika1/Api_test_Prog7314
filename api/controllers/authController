@@ -2,23 +2,24 @@ const admin = require('../config/firebase');
 
 const register = async (req, res, next) => {
     try{
-        const {fullName, email, password} = req.body;
+        const {firstName, lastName, email, password} = req.body;
 
-        if(!fullName || !email || !password){
+        if(!firstName || !lastName || !email || !password){
             return res.status(400).json({
-                error: 'Full name, email, and password are reqired'
+                error: 'First name, last name, email, and password are reqired'
             });
         }
     
     
         if(
-            typeof fullName !== 'string' ||
+            typeof firstName !== 'string' ||
+            typeof lastName !== 'string' ||
              typeof email !== 'string' ||
               typeof password !== 'string' 
         )
         {
  return res.status(400).json({
-                error: 'Full name, email, and password must be text values'
+                error: 'first name, last name, email, and password must be text values'
             });
         }
         if(password.length < 8){
@@ -30,7 +31,7 @@ const register = async (req, res, next) => {
         const user = await admin.auth().createUser({
             email: email.toLowerCase().trim(),
             password: password,
-            displayName: fullName.trim()
+            displayName: `${firstName} ${lastName}`.trim()
         });
 
         await admin.auth().setCustomUserClaims(user.uid, {
@@ -41,7 +42,8 @@ res.status(201).json({
     message: 'User registered',
     data: {
         id: user.uid,
-        fullName : user.displayName,
+        firstName: user.displayName.split(' ')[0],
+        lastName: user.displayName.split(' ')[1],
         email: user.email,
         role: 'user'
     }
@@ -129,7 +131,8 @@ res.status(200).json({
     message: 'Login successful',
     data: {
         id: user.uid,
-        fullName: user.displayName,
+        firstName: user.displayName.split(' ')[0],
+        lastName: user.displayName.split(' ')[1],
         email: user.email,
         role: user.customClaims?.role || 'user',
         token: data.idToken,
@@ -165,7 +168,8 @@ const loginSSO = async (req, res, next) => {
             message: 'SSO login successful',
             data: {
                 id: user.uid,
-                fullName: user.displayName,
+                firstName: user.displayName.split(' ')[0],
+                lastName: user.displayName.split(' ')[1],
                 email: user.email,
                 role: user.customClaims?.role || 'user'
             }
