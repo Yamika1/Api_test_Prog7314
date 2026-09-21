@@ -19,7 +19,7 @@ fun IfUsernameIsValid_ReturnTrue(){
     }
     @Test
     fun IfPasswordIsValid_ReturnTrue(){
-        val Password = "james23!"
+        val Password = "james23#!"
         val result = Validator.isValidPassword(Password)
         Assert.assertTrue(result)
     }
