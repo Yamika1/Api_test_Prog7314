@@ -39,6 +39,7 @@ class AddTaskFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_add_task, container, false)
     }
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         taskName = view.findViewById<EditText>(R.id.taskName)
@@ -100,4 +101,3 @@ class AddTaskFragment : Fragment() {
 
 
 }
-

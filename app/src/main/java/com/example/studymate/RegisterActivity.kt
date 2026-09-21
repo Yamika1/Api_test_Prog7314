@@ -16,7 +16,9 @@ class RegisterActivity : AppCompatActivity() {
     private lateinit var firstName : EditText
     private lateinit var lastName : EditText
     private lateinit var username : EditText
-     private lateinit var email : EditText
+
+    private lateinit var email : EditText
+
     private lateinit var password : EditText
     private lateinit var btnRegister : Button
 
@@ -52,9 +54,11 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         textviewLogin.setOnClickListener {
-        val intent = Intent(this, LoginActivity::class.java)
+
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
+
         }
 
 

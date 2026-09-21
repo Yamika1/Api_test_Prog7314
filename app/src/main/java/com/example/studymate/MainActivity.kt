@@ -1,69 +1,75 @@
 package com.example.studymate
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import retrofit2.Response
 
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var textviewLogin: TextView
+    private lateinit var loginPassword : TextView
+    private lateinit var btnLogin: Button
+    private lateinit var btnSSO : Button
+    private lateinit var textviewRegister : TextView
 
-    private lateinit var textviewTaskName: TextView
-    private lateinit var textviewStudyMate: TextView
-    private lateinit var textviewWelcome : TextView
 
-    private lateinit var textviewDate : TextView
+  
 
-    private lateinit var textviewTodayTitle : TextView
 
-    private lateinit var cardTodayTask : CardView
-
-    private lateinit var textviewTaskDetails : TextView
-
-    private lateinit var textviewUpcomingTitle : TextView
-
-    private lateinit var cardUpcomingTask : CardView
-
-    private lateinit var textviewUpcomingDetails : TextView
-
-    private lateinit var textviewProgressTitle : TextView
-
-    private lateinit var cardProgress : CardView
-
-    private lateinit var textviewCompleted : TextView
-
-    private lateinit var textviewPercentage : TextView
-
-    private lateinit var bottomNav : View
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
        setContentView(R.layout.activity_main)
-        textviewTaskName= findViewById<TextView>(R.id.textviewTaskName)
-        textviewStudyMate= findViewById<TextView>(R.id.textviewStudyMate)
-        textviewWelcome = findViewById<TextView>(R.id.textviewWelcome)
-        textviewDate = findViewById<TextView>(R.id.textviewDate)
-        textviewTodayTitle = findViewById<TextView>(R.id.textviewTodayTitle)
-        cardTodayTask = findViewById<CardView>(R.id.cardTodayTask)
-        textviewTaskDetails = findViewById<TextView>(R.id.textviewTaskDetails)
-        textviewUpcomingTitle  = findViewById<TextView>(R.id.textviewUpcomingTitle)
-        cardUpcomingTask  = findViewById<CardView>(R.id.cardUpcomingTask)
-        textviewUpcomingDetails  = findViewById<TextView>(R.id.textviewUpcomingDetails)
-        textviewProgressTitle = findViewById<TextView>(R.id.textviewProgressTitle)
-        cardProgress = findViewById<CardView>(R.id.cardProgress)
-        textviewCompleted = findViewById<TextView>(R.id.textviewCompleted)
-        textviewPercentage = findViewById<TextView>(R.id.textviewPercentage)
-        bottomNav = findViewById<View>(R.id.bottomNav)
+
+
+        textviewLogin = findViewById<TextView>(R.id.textviewLogin)
+        loginPassword = findViewById<TextView>(R.id.loginPassword)
+        btnLogin = findViewById<Button>(R.id.btnLogin)
+        btnSSO = findViewById<Button>(R.id.btnSSO)
+        textviewRegister = findViewById<TextView>(R.id.textviewRegister)
+
+
+        textviewLogin.setOnClickListener {
+
+            val email = textviewLogin.text.toString().trim()
+            val password = loginPassword.text.toString().trim()
+
+            if (email.isEmpty() || password.isEmpty()){
+                Toast.makeText(this,"Please fill in all fields",Toast.LENGTH_SHORT).show()
+            }
+            else{
+           login(email, password,)
+            }
+        }
+
+        textviewRegister.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+    fun login(email: String, password: String){
+        val request = Login(email = email, password = password)
+        val login = RetroFitClient.api.login(email = email, password = password)
+
+
+
+
     }
 }
