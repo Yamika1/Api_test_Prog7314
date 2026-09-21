@@ -2,17 +2,14 @@ package com.example.studymate
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.FragmentContainerView
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import retrofit2.Response
 
 
 class MainActivity : AppCompatActivity() {
@@ -42,14 +39,14 @@ class MainActivity : AppCompatActivity() {
 
         textviewLogin.setOnClickListener {
 
-            val usernameOrEmail = textviewLogin.text.toString().trim()
+            val email = textviewLogin.text.toString().trim()
             val password = loginPassword.text.toString().trim()
 
-            if (usernameOrEmail.isEmpty() || password.isEmpty()){
+            if (email.isEmpty() || password.isEmpty()){
                 Toast.makeText(this,"Please fill in all fields",Toast.LENGTH_SHORT).show()
             }
             else{
-                login(usernameOrEmail,password)
+           login(email, password,)
             }
         }
 
@@ -60,22 +57,19 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
     }
-    fun login(usernameOrEmail:String, password:String){
-        /*  -- api call here --
-         if (thingythingyCall is successful) {
-           Toast.makeText(this,"Successfully Log in!",Toast.LENGTH_SHORT).show()
-             startActivity(intent)
-             finish()
-         }else{
-             Toast.makeText(this,"Login Failed! ${task?.exception.message}",Toast.LENGTH_SHORT).show()
-         }
-   */
+    fun login(email: String, password: String){
+        val request = Login(email = email, password = password)
+        val login = RetroFitClient.api.login(email = email, password = password)
+
+
+
 
     }
 }
