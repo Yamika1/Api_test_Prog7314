@@ -29,7 +29,7 @@ class RegisterActivity : AppCompatActivity() {
 
     private lateinit var textviewLogin : TextView
 
-    private lateinit var fragmentContainerView: FragmentContainerView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

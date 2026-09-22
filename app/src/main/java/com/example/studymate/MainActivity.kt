@@ -11,10 +11,12 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.FragmentContainerView
+import android.content.SharedPreferences
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import androidx.core.content.edit
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,7 +27,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var textviewRegister : TextView
     private lateinit var loginEmail:EditText
 
-    private lateinit var fragmentContainerView: FragmentContainerView
+    private lateinit var sharedPreferences: SharedPreferences
+
+
   
 
 
@@ -34,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
        setContentView(R.layout.activity_main)
 
-
+sharedPreferences = getSharedPreferences("StudyMatePrefs", MODE_PRIVATE)
         loginEmail = findViewById<EditText>(R.id.loginEmail)
         loginPassword = findViewById<EditText>(R.id.loginPassword)
         btnLogin = findViewById<Button>(R.id.btnLogin)
@@ -81,6 +85,16 @@ class MainActivity : AppCompatActivity() {
 
             override fun onResponse(p0: Call<LoginResponse?>, p1: Response<LoginResponse?>) {
                     if (p1.isSuccessful){
+                        val user = p1.body()!!.data
+
+                        sharedPreferences.edit {
+                            putString("firstName", user.firstName)
+                                .putString("lastName", user.lastName)
+                                .putString("email", user.email)
+                                .putString("idToken", user.token)
+                                .putString("refreshToken", user.refreshToken)
+                        }
+
                         Toast.makeText(this@MainActivity,"Login Successful!",Toast.LENGTH_SHORT).show()
                         supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView,
                             HomeFragment()).commit()

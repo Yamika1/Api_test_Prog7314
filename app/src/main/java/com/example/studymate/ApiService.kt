@@ -19,7 +19,19 @@ data class LoginRequest(
 
 data class LoginResponse(
     val message: String,
-    val data: LoginRequest
+    val data: LoginData
+)
+
+data class LoginData(
+    val id: String,
+    val firstName: String,
+    val lastName: String,
+    val username: String?,
+    val email: String,
+    val role: String,
+    val token: String,
+    val refreshToken: String,
+    val expiresIn: String
 )
 
 data class RegisterRequest(
@@ -36,8 +48,7 @@ var token: String
 )
 
 data class LoginSSO(
-    val email: String,
-    val  password: String
+    val idToken: String?
 )
 
 
