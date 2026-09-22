@@ -2,6 +2,9 @@ package com.example.studymate
 
 import retrofit2.Call
 import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.Field
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 
@@ -11,29 +14,40 @@ data class HealthResponse(
     val firebase: String
 )
 
-data class Login(
+data class LoginRequest(
     val email: String,
     val  password: String
 )
 
-data class Register(
-val firstName: String,
-val lastName: String,
-val username: String,
-val email: String,
-val password: String
+data class LoginResponse(
+    val message: String,
+    val data: LoginRequest
 )
+
+data class RegisterRequest(
+    val firstName: String,
+    val lastName: String,
+    val username: String,
+    val email: String,
+    val password: String
+)
+
+data class RegisterResponse(
+val message: String,
+var token: String
+)
+
+
 interface ApiService {
 
-    @GET("health")
+    @GET("/health")
    suspend fun checkHealth(): Response<HealthResponse>
 
 
-    @POST("user/login")
-    fun login(email: String,password: String): Response<Login>
+    @POST("./api/auth/login")
+    fun login(@Body request: LoginRequest) : Call<LoginResponse>
 
 
-
-    @POST("user/register")
-     fun register(): Response<Register>
+    @POST("./api/auth/register")
+     fun register(@Body request: RegisterRequest) : Call<RegisterResponse>
 }

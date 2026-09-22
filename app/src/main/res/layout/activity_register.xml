@@ -155,7 +155,7 @@
     <TextView
         android:id="@+id/textviewLogin"
         android:layout_width="254dp"
-        android:layout_height="25dp"
+        android:layout_height="48dp"
         android:clickable="true"
         android:focusable="true"
         android:minHeight="48dp"
@@ -168,5 +168,15 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnRegister"
         app:layout_constraintVertical_bias="0.196" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:layout_width="420dp"
+        android:layout_height="902dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

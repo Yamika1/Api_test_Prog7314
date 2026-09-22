@@ -7,6 +7,7 @@ object Validator {
     }
 
         fun isValidPassword(Password: String): Boolean {
-            return Password.contains("#") && Password.contains("!")
+            return Password.length >=8 && Password.any {it.isDigit()} &&
+               Password.any {!it.isLetterOrDigit()}
         }
     }
