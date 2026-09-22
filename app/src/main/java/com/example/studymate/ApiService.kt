@@ -3,8 +3,6 @@ package com.example.studymate
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 
@@ -37,6 +35,12 @@ val message: String,
 var token: String
 )
 
+data class LoginSSO(
+    val email: String,
+    val  password: String
+)
+
+
 
 interface ApiService {
 
@@ -50,4 +54,7 @@ interface ApiService {
 
     @POST("./api/auth/register")
      fun register(@Body request: RegisterRequest) : Call<RegisterResponse>
+
+    @POST("./api/auth/login/sso")
+    fun loginSSO(@Body request: LoginSSO) : Call<LoginResponse>
 }

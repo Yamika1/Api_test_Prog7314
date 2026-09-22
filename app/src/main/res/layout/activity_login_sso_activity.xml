@@ -126,7 +126,7 @@
                         android:id="@+id/textViewAccountName"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text=""
+                        android:text="Alex Gacey"
                         android:textColor="@color/black"
                         android:textSize="14sp"
                         android:textStyle="bold" />
@@ -138,17 +138,11 @@
                         android:layout_marginTop="2dp"
                         android:ellipsize="end"
                         android:maxLines="1"
-                        android:text=""
+                        android:text="alex@email.com"
                         android:textColor="#5F6368"
                         android:textSize="12sp" />
 
-                    <TextView
-                        android:id="@+id/textViewAccountUsername"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text=""
-                        android:textColor="#5F6368"
-                        android:textSize="11sp" />
+
 
                 </LinearLayout>
 
@@ -204,5 +198,14 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragmentContainerView"
+        android:layout_width="420dp"
+        android:layout_height="902dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

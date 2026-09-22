@@ -3,7 +3,6 @@ package com.example.studymate
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -41,7 +40,6 @@ class MainActivity : AppCompatActivity() {
         btnLogin = findViewById<Button>(R.id.btnLogin)
         btnSSO = findViewById<Button>(R.id.btnSSO)
         textviewRegister = findViewById<TextView>(R.id.textviewRegister)
-        fragmentContainerView = findViewById<FragmentContainerView>(R.id.fragmentContainerView)
 
         btnLogin.setOnClickListener {
 
@@ -58,6 +56,11 @@ class MainActivity : AppCompatActivity() {
 
         textviewRegister.setOnClickListener {
             val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        btnSSO.setOnClickListener {
+            val intent = Intent(this, LoginSSOActivity::class.java)
             startActivity(intent)
         }
 
