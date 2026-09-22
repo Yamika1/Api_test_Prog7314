@@ -2,7 +2,8 @@ const admin = require('../config/firebase');
 
 const register = async (req, res, next) => {
     try{
-        const {firstName, lastName, email, password} = req.body;
+        
+        const {firstName, lastName, username, email, password} = req.body;
 
         if(!firstName || !lastName || !email || !username|| !password){
             return res.status(400).json({
@@ -15,6 +16,7 @@ const register = async (req, res, next) => {
             typeof firstName !== 'string' ||
             typeof lastName !== 'string' ||
              typeof email !== 'string' ||
+              typeof username !== 'string' ||
               typeof password !== 'string' 
         )
         {
@@ -45,6 +47,7 @@ res.status(201).json({
         id: user.uid,
         firstName: user.displayName.split(' ')[0],
         lastName: user.displayName.split(' ')[1],
+        username : user.username,
         email: user.email,
         role: 'user'
     }

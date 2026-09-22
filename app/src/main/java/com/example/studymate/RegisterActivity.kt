@@ -88,6 +88,8 @@ class RegisterActivity : AppCompatActivity() {
 
                 }else{
                     Toast.makeText(this@RegisterActivity,"Registration Failed! ${p1.message()}",Toast.LENGTH_SHORT).show()
+                    val errorBody = p1.errorBody()?.string()
+
 
                 }
             }
