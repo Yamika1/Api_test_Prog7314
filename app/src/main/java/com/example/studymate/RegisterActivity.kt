@@ -2,6 +2,7 @@ package com.example.studymate
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -10,6 +11,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class RegisterActivity : AppCompatActivity() {
 
@@ -49,17 +53,15 @@ class RegisterActivity : AppCompatActivity() {
                 Toast.makeText(this,"All fields are required. Please fill in all empty fields",Toast.LENGTH_SHORT).show()
             }
             else{
-                register(firstName,lastName,email,username,password)
+                 register(firstName,lastName,email,username,password)
+
             }
         }
 
         textviewLogin.setOnClickListener {
-
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
-        finish()
-
-        }
+        finish() }
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -70,14 +72,25 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     private fun register(firstName:String,lastName:String,email:String,username: String,password: String){
-        /*    -- api call here --
-         if (RegisterthingythingyCall is successful) {
-           Toast.makeText(this,"Registration Successful!",Toast.LENGTH_SHORT).show()
-             startActivity(intent)
-             finish()
-         }else{
-             Toast.makeText(this,"Registration Failed! ${task?.exception.message}",Toast.LENGTH_SHORT).show()
-         }
-   */
+        val request = RegisterRequest(firstName = firstName, lastName = lastName, email=email, username=username, password = password)
+        RetroFitClient.api.register(request).enqueue(object : Callback<RegisterResponse?>{
+
+            override fun onResponse(p0: Call<RegisterResponse?>, p1: Response<RegisterResponse?>) {
+                if (p1.isSuccessful){
+                Toast.makeText(this@RegisterActivity,"Registration Successful!",Toast.LENGTH_SHORT).show()
+                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView,
+                        HomeFragment()).commit()
+
+                }else{
+                    Toast.makeText(this@RegisterActivity,"Registration Failed! ${p1.message()}",Toast.LENGTH_SHORT).show()
+
+                }
+            }
+
+
+            override fun onFailure(p0: Call<RegisterResponse?>, t: Throwable) {
+                Toast.makeText(this@RegisterActivity,"Error: ${t.message}",Toast.LENGTH_SHORT).show()
+            }
+        })
     }
 }

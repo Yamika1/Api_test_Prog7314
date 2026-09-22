@@ -2,11 +2,11 @@ const admin = require('../config/firebase');
 
 const register = async (req, res, next) => {
     try{
-        const {firstName, lastName, email, password} = req.body;
+        const {firstName, lastName, username, email, password} = req.body;
 
-        if(!firstName || !lastName || !email || !password){
+        if(!firstName || !lastName || !email || !username|| !password){
             return res.status(400).json({
-                error: 'First name, last name, email, and password are reqired'
+                error: 'First name, last name, email, and password are required'
             });
         }
     
@@ -15,11 +15,12 @@ const register = async (req, res, next) => {
             typeof firstName !== 'string' ||
             typeof lastName !== 'string' ||
              typeof email !== 'string' ||
+              typeof username !== 'string' ||
               typeof password !== 'string' 
         )
         {
  return res.status(400).json({
-                error: 'first name, last name, email, and password must be text values'
+                error: 'first name, last name, email, username and password must be text values'
             });
         }
         if(password.length < 8){
@@ -28,13 +29,14 @@ const register = async (req, res, next) => {
             })
         }
 
-        const user = await admin.auth().createUser({
+        const user = await admin.getAuth().createUser({
+
             email: email.toLowerCase().trim(),
             password: password,
             displayName: `${firstName} ${lastName}`.trim()
         });
 
-        await admin.auth().setCustomUserClaims(user.uid, {
+        await admin.getAuth().setCustomUserClaims(user.uid, {
             role: 'user'
         });
 
@@ -44,6 +46,7 @@ res.status(201).json({
         id: user.uid,
         firstName: user.displayName.split(' ')[0],
         lastName: user.displayName.split(' ')[1],
+        username: user.username,
         email: user.email,
         role: 'user'
     }
@@ -104,6 +107,7 @@ const response = await fetch(
 
 const data = await response.json();
 
+ 
 if(!response.ok){
     if(
         data.error.message === 'EMAIL_NOT_FOUND' ||
@@ -125,14 +129,15 @@ return res.status(400).json({
 });
 }
 
-const user = await admin.auth().getUser(data.localId);
-
+const user = await admin.getAuth().getUser(data.localId);
+   
 res.status(200).json({
     message: 'Login successful',
     data: {
         id: user.uid,
         firstName: user.displayName.split(' ')[0],
         lastName: user.displayName.split(' ')[1],
+        username: user.username,
         email: user.email,
         role: user.customClaims?.role || 'user',
         token: data.idToken,
@@ -161,8 +166,8 @@ const loginSSO = async (req, res, next) => {
                 error: 'Firebase ID token must be a text value'
             });
         }
-        const decodedToken = await admin.auth().verifyIdToken(idToken);
-        const user = await admin.auth().getUser(decodedToken.uid);
+        const decodedToken = await admin.getAuth().verifyIdToken(idToken);
+        const user = await admin.getAuth().getUser(decodedToken.uid);
 
         res.status(200).json({
             message: 'SSO login successful',
@@ -170,6 +175,7 @@ const loginSSO = async (req, res, next) => {
                 id: user.uid,
                 firstName: user.displayName.split(' ')[0],
                 lastName: user.displayName.split(' ')[1],
+                username:user.username,
                 email: user.email,
                 role: user.customClaims?.role || 'user'
             }

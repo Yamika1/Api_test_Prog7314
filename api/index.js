@@ -8,10 +8,10 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const firebase =require('./api/config/firebase');
+const firebase =require('./config/firebase');
 
-const authRoutes = require('./api/routes/authRoutes');
-const errorHandler = require('./api/middleware/errorHandler'); 
+const authRoutes = require('./routes/authRoutes');
+const errorHandler = require('./middleware/errorHandler');
 
 const app = express();
 
