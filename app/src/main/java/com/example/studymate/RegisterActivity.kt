@@ -81,8 +81,10 @@ class RegisterActivity : AppCompatActivity() {
             override fun onResponse(p0: Call<RegisterResponse?>, p1: Response<RegisterResponse?>) {
                 if (p1.isSuccessful){
                 Toast.makeText(this@RegisterActivity,"Registration Successful!",Toast.LENGTH_SHORT).show()
-                    supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView,
-                        HomeFragment()).commit()
+                    val intent = Intent(this@RegisterActivity, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+
 
                 }else{
                     Toast.makeText(this@RegisterActivity,"Registration Failed! ${p1.message()}",Toast.LENGTH_SHORT).show()

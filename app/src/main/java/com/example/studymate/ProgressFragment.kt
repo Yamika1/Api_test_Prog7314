@@ -1,10 +1,12 @@
 package com.example.studymate
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
 
@@ -17,6 +19,8 @@ private lateinit var tvTotalTasks: TextView
 private lateinit var textviewCompletedTasks: TextView
 private lateinit var textviewIncompleteTasks: TextView
 private lateinit var tvOverdueTasks: TextView
+
+private lateinit var backToHome : Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,6 +46,14 @@ private lateinit var tvOverdueTasks: TextView
         textviewIncompleteTasks = view.findViewById<TextView>(R.id.textviewIncompleteTasks)
         tvOverdueTasks = view.findViewById<TextView>(R.id.tvOverdueTasks)
 
+
+        backToHome = view.findViewById<Button>(R.id.backToHome)
+
+
+        backToHome.setOnClickListener {
+            val intent = Intent(requireContext(), HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 }

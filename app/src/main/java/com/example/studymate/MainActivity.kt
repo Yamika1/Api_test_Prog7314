@@ -96,8 +96,9 @@ sharedPreferences = getSharedPreferences("StudyMatePrefs", MODE_PRIVATE)
                         }
 
                         Toast.makeText(this@MainActivity,"Login Successful!",Toast.LENGTH_SHORT).show()
-                        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView,
-                            HomeFragment()).commit()
+                        val intent = Intent(this@MainActivity, HomeActivity::class.java)
+                        startActivity(intent)
+
 
                     }else{
                           Toast.makeText(this@MainActivity,"Login Failed! ${p1.message()}",Toast.LENGTH_SHORT).show()

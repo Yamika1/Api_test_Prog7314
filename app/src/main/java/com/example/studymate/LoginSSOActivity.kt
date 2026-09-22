@@ -1,5 +1,6 @@
 package com.example.studymate
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -69,8 +70,10 @@ class LoginSSOActivity : AppCompatActivity() {
                     override fun onResponse(p0: Call<LoginResponse?>, p1: Response<LoginResponse?>) {
                         if (p1.isSuccessful) {
                             Toast.makeText(this@LoginSSOActivity, "Login Successful!", Toast.LENGTH_SHORT).show()
-                            supportFragmentManager.beginTransaction().replace(R.id.fragmentContainerView,
-                                HomeFragment()).commit()
+                            val intent = Intent(this@LoginSSOActivity, HomeActivity::class.java)
+                            startActivity(intent)
+                            finish()
+
                         } else {
                             Toast.makeText(this@LoginSSOActivity, "Login Failed! ${p1.message()}", Toast.LENGTH_SHORT).show()
                         }

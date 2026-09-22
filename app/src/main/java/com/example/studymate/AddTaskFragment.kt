@@ -1,5 +1,6 @@
 package com.example.studymate
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,6 +26,8 @@ class AddTaskFragment : Fragment() {
 
     private lateinit var btnSaveTask: Button
 
+    private lateinit var backToHome : Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +51,13 @@ class AddTaskFragment : Fragment() {
         spCategory = view.findViewById<Spinner>(R.id.spCategory)
         spinnerPriority = view.findViewById<Spinner>(R.id.spinnerPriority)
         btnSaveTask = view.findViewById<Button>(R.id.btnSaveTask)
+        backToHome = view.findViewById<Button>(R.id.backToHome)
+
+
+        backToHome.setOnClickListener {
+            val intent = Intent(requireContext(), HomeActivity::class.java)
+            startActivity(intent)
+        }
 
         val categoryItems : ArrayList<String> = arrayListOf("Wellness", "Fitness", "Academic", "Work", "Personal")
         val categoryAdapter= ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, categoryItems)

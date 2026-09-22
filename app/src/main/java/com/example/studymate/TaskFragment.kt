@@ -1,5 +1,6 @@
 package com.example.studymate
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -17,6 +18,8 @@ private lateinit var searchTasks: EditText
     private lateinit var filterTests: Button
     private lateinit var filterExams : Button
     private lateinit var taskRecyclerView : RecyclerView
+
+    private lateinit var backToHome : Button
 
 
 
@@ -41,6 +44,15 @@ private lateinit var searchTasks: EditText
         filterTests = view.findViewById<Button>(R.id.filterTests)
         filterExams = view.findViewById<Button>(R.id.filterExams)
         taskRecyclerView = view.findViewById<RecyclerView>(R.id.taskRecyclerView)
+
+
+        backToHome = view.findViewById<Button>(R.id.backToHome)
+
+
+        backToHome.setOnClickListener {
+            val intent = Intent(requireContext(), HomeActivity::class.java)
+            startActivity(intent)
+        }
     }
 
 
