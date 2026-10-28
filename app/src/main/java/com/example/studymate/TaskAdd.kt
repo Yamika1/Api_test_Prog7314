@@ -1,4 +1,3 @@
-
 package com.example.studymate
 
 import androidx.room.Entity
