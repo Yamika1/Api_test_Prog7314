@@ -1,11 +1,21 @@
 package com.example.studymate
-import androidx.lifecycle.LiveData
 
-class TaskAddRepository(private val taskAdd: TaskAddInterface){
-    val readAllData:LiveData<List<TaskAdd>> = taskAdd.readAllData()
+class TaskAddRepository(
+    private val taskDao: TaskAddInterface
+) {
+    val readAllData = taskDao.readAllData()
 
-    suspend fun addTask(task: TaskAdd){
-        taskAdd.addTask(task)
+    fun getTaskById(id: Int) = taskDao.getTaskById(id)
+
+    suspend fun addTask(task: TaskAdd) {
+        taskDao.addTask(task)
     }
 
+    suspend fun updateTask(task: TaskAdd) {
+        taskDao.updateTask(task)
+    }
+
+    suspend fun deleteTask(task: TaskAdd) {
+        taskDao.deleteTask(task)
+    }
 }
