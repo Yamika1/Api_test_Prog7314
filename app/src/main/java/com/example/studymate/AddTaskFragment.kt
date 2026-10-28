@@ -27,6 +27,8 @@ class AddTaskFragment : Fragment() {
 
     private var editingTaskId: Long? = null
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         editingTaskId = arguments?.getLong("taskId")?.takeIf { it != 0L }
