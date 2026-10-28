@@ -1,28 +1,45 @@
+
 package com.example.studymate
-import androidx.lifecycle.AndroidViewModel
+
 import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class TaskAddViewModel(application:Application) :AndroidViewModel(application) {
-
-    private val readAllData : LiveData<List<TaskAdd>>
+class TaskAddViewModel(application: Application) :
+    AndroidViewModel(application) {
 
     private val repository: TaskAddRepository
 
-    init{
-        val add = TaskAddDatabase.getDatabase(application).taskAdd()
-        repository= TaskAddRepository(add)
-        readAllData = repository.readAllData
+    val allTasks: LiveData<List<TaskAdd>>
 
+    init {
+        val dao = TaskAddDatabase.getDatabase(application).taskAdd()
+        repository = TaskAddRepository(dao)
+        allTasks = repository.readAllData
     }
 
-    fun addTask(task: TaskAdd){
-        viewModelScope.launch(Dispatchers.IO){
+    fun getTaskById(id: Int): LiveData<TaskAdd?> {
+        return repository.getTaskById(id)
+    }
+
+    fun addTask(task: TaskAdd) {
+        viewModelScope.launch(Dispatchers.IO) {
             repository.addTask(task)
         }
+    }
 
+    fun updateTask(task: TaskAdd) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.updateTask(task)
+        }
+    }
+
+    fun deleteTask(task: TaskAdd) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteTask(task)
+        }
     }
 }
