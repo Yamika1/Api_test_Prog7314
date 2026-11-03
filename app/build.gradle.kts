@@ -2,6 +2,7 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.gms.google.services)
     alias(libs.plugins.google.firebase.crashlytics)
+    alias(libs.plugins.ksp)
 }
 
 android {
@@ -51,8 +52,17 @@ dependencies {
     implementation(libs.firebase.crashlytics)
     implementation("androidx.recyclerview:recyclerview:1.4.0")
     implementation("androidx.cardview:cardview:1.0.0")
+    implementation(libs.firebase.database)
     implementation(libs.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+
+    val room_version = "2.8.4"
+    implementation("androidx.room:room-runtime:$room_version")
+
+    ksp("androidx.room:room-compiler:$room_version")
+
+    implementation("androidx.room:room-ktx:$room_version")
+
 }
